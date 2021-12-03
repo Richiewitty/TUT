@@ -1,0 +1,2 @@
+SyntaxError in line 12 of /home/dinesh/TUT/workshop-reproducible-research/tutorials/snakemake/Snakefile:
+Expecting rule keyword, comment or docstrings inside a rule definition. (Snakefile, line 12)

@@ -1,0 +1,182 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count    min threads    max threads
+--------------------  -------  -------------  -------------
+align_to_genome             3              1              1
+all                         1              1              1
+generate_count_table        1              1              1
+get_genome_fasta            1              1              1
+index_genome                1              1              1
+sort_bam                    3              1              1
+total                      10              1              1
+
+Select jobs to execute...
+
+[Thu Dec  2 14:36:07 2021]
+rule get_genome_fasta:
+    output: data/raw_external/NCTC8325.fa.gz
+    log: results/logs/get_genome_fasta/NCTC8325.log
+    jobid: 0
+    reason: Forced execution
+    resources: tmpdir=/tmp
+
+
+        wget ftp://ftp.ensemblgenomes.org/pub/bacteria/release-37/fasta/bacteria_18_collection/staphylococcus_aureus_subsp_aureus_nctc_8325/dna//Staphylococcus_aureus_subsp_aureus_nctc_8325.ASM1342v1.dna_rm.toplevel.fa.gz -O data/raw_external/NCTC8325.fa.gz -o results/logs/get_genome_fasta/NCTC8325.log
+        
+[Thu Dec  2 14:36:10 2021]
+Finished job 0.
+1 of 10 steps (10%) done
+Select jobs to execute...
+
+[Thu Dec  2 14:36:10 2021]
+rule index_genome:
+    input: data/raw_external/NCTC8325.fa.gz
+    output: intermediate/NCTC8325.1.bt2, intermediate/NCTC8325.2.bt2, intermediate/NCTC8325.3.bt2, intermediate/NCTC8325.4.bt2, intermediate/NCTC8325.rev.1.bt2, intermediate/NCTC8325.rev.2.bt2
+    jobid: 6
+    reason: Input files updated by another job: data/raw_external/NCTC8325.fa.gz
+    resources: tmpdir=/tmp
+
+
+        # Bowtie2 cannot use .gz, so unzip to a temporary file first
+        gunzip -c data/raw_external/NCTC8325.fa.gz > tempfile
+        bowtie2-build tempfile intermediate/NCTC8325
+
+        # Remove the temporary file
+        rm tempfile
+        
+[Thu Dec  2 14:36:14 2021]
+Finished job 6.
+2 of 10 steps (20%) done
+Select jobs to execute...
+
+[Thu Dec  2 14:36:14 2021]
+rule align_to_genome:
+    input: data/raw_internal/SRR935091.fastq.gz, intermediate/NCTC8325.1.bt2, intermediate/NCTC8325.2.bt2, intermediate/NCTC8325.3.bt2, intermediate/NCTC8325.4.bt2, intermediate/NCTC8325.rev.1.bt2, intermediate/NCTC8325.rev.2.bt2
+    output: intermediate/SRR935091.bam
+    jobid: 8
+    reason: Input files updated by another job: intermediate/NCTC8325.3.bt2, intermediate/NCTC8325.4.bt2, intermediate/NCTC8325.2.bt2, intermediate/NCTC8325.rev.2.bt2, intermediate/NCTC8325.rev.1.bt2, intermediate/NCTC8325.1.bt2
+    wildcards: sra_id=SRR935091
+    resources: tmpdir=/tmp
+
+
+        bowtie2 -x intermediate/NCTC8325 -U data/raw_internal/SRR935091.fastq.gz > intermediate/SRR935091.bam
+        
+
+[Thu Dec  2 14:36:14 2021]
+rule align_to_genome:
+    input: data/raw_internal/SRR935092.fastq.gz, intermediate/NCTC8325.1.bt2, intermediate/NCTC8325.2.bt2, intermediate/NCTC8325.3.bt2, intermediate/NCTC8325.4.bt2, intermediate/NCTC8325.rev.1.bt2, intermediate/NCTC8325.rev.2.bt2
+    output: intermediate/SRR935092.bam
+    jobid: 11
+    reason: Input files updated by another job: intermediate/NCTC8325.3.bt2, intermediate/NCTC8325.4.bt2, intermediate/NCTC8325.2.bt2, intermediate/NCTC8325.rev.2.bt2, intermediate/NCTC8325.rev.1.bt2, intermediate/NCTC8325.1.bt2
+    wildcards: sra_id=SRR935092
+    resources: tmpdir=/tmp
+
+
+        bowtie2 -x intermediate/NCTC8325 -U data/raw_internal/SRR935092.fastq.gz > intermediate/SRR935092.bam
+        
+[Thu Dec  2 14:36:16 2021]
+Finished job 8.
+3 of 10 steps (30%) done
+Select jobs to execute...
+
+[Thu Dec  2 14:36:16 2021]
+rule sort_bam:
+    input: intermediate/SRR935091.bam
+    output: intermediate/SRR935091.sorted.bam
+    jobid: 7
+    reason: Input files updated by another job: intermediate/SRR935091.bam
+    wildcards: sra_id=SRR935091
+    resources: tmpdir=/tmp
+
+
+        samtools sort intermediate/SRR935091.bam > intermediate/SRR935091.sorted.bam
+        
+[Thu Dec  2 14:36:16 2021]
+Finished job 7.
+4 of 10 steps (40%) done
+Select jobs to execute...
+
+[Thu Dec  2 14:36:16 2021]
+rule align_to_genome:
+    input: data/raw_internal/SRR935090.fastq.gz, intermediate/NCTC8325.1.bt2, intermediate/NCTC8325.2.bt2, intermediate/NCTC8325.3.bt2, intermediate/NCTC8325.4.bt2, intermediate/NCTC8325.rev.1.bt2, intermediate/NCTC8325.rev.2.bt2
+    output: intermediate/SRR935090.bam
+    jobid: 4
+    reason: Input files updated by another job: intermediate/NCTC8325.3.bt2, intermediate/NCTC8325.4.bt2, intermediate/NCTC8325.2.bt2, intermediate/NCTC8325.rev.2.bt2, intermediate/NCTC8325.rev.1.bt2, intermediate/NCTC8325.1.bt2
+    wildcards: sra_id=SRR935090
+    resources: tmpdir=/tmp
+
+
+        bowtie2 -x intermediate/NCTC8325 -U data/raw_internal/SRR935090.fastq.gz > intermediate/SRR935090.bam
+        
+[Thu Dec  2 14:36:16 2021]
+Finished job 11.
+5 of 10 steps (50%) done
+Select jobs to execute...
+
+[Thu Dec  2 14:36:16 2021]
+rule sort_bam:
+    input: intermediate/SRR935092.bam
+    output: intermediate/SRR935092.sorted.bam
+    jobid: 10
+    reason: Input files updated by another job: intermediate/SRR935092.bam
+    wildcards: sra_id=SRR935092
+    resources: tmpdir=/tmp
+
+
+        samtools sort intermediate/SRR935092.bam > intermediate/SRR935092.sorted.bam
+        
+[Thu Dec  2 14:36:17 2021]
+Finished job 10.
+6 of 10 steps (60%) done
+[Thu Dec  2 14:36:17 2021]
+Finished job 4.
+7 of 10 steps (70%) done
+Select jobs to execute...
+
+[Thu Dec  2 14:36:17 2021]
+rule sort_bam:
+    input: intermediate/SRR935090.bam
+    output: intermediate/SRR935090.sorted.bam
+    jobid: 3
+    reason: Input files updated by another job: intermediate/SRR935090.bam
+    wildcards: sra_id=SRR935090
+    resources: tmpdir=/tmp
+
+
+        samtools sort intermediate/SRR935090.bam > intermediate/SRR935090.sorted.bam
+        
+[Thu Dec  2 14:36:18 2021]
+Finished job 3.
+8 of 10 steps (80%) done
+Select jobs to execute...
+
+[Thu Dec  2 14:36:18 2021]
+rule generate_count_table:
+    input: intermediate/SRR935090.sorted.bam, intermediate/SRR935091.sorted.bam, intermediate/SRR935092.sorted.bam, data/raw_external/NCTC8325.gff3.gz
+    output: results/tables/counts.tsv
+    jobid: 2
+    reason: Input files updated by another job: intermediate/SRR935090.sorted.bam, intermediate/SRR935092.sorted.bam, intermediate/SRR935091.sorted.bam
+    resources: tmpdir=/tmp
+
+
+        featureCounts -t gene -g gene_id -a data/raw_external/NCTC8325.gff3.gz -o results/tables/counts.tsv intermediate/SRR935090.sorted.bam intermediate/SRR935091.sorted.bam intermediate/SRR935092.sorted.bam
+        
+[Thu Dec  2 14:36:18 2021]
+Finished job 2.
+9 of 10 steps (90%) done
+Select jobs to execute...
+
+[Thu Dec  2 14:36:18 2021]
+localrule all:
+    input: results/tables/counts.tsv, results/multiqc.html, results/rulegraph.png
+    jobid: 1
+    reason: Input files updated by another job: results/tables/counts.tsv
+    resources: tmpdir=/tmp
+
+[Thu Dec  2 14:36:18 2021]
+Finished job 1.
+10 of 10 steps (100%) done
+Complete log: /home/dinesh/TUT/workshop-reproducible-research/tutorials/snakemake/.snakemake/log/2021-12-02T143606.829468.snakemake.log

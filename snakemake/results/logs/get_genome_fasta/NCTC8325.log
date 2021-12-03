@@ -1,0 +1,31 @@
+--2021-12-02 14:36:07--  ftp://ftp.ensemblgenomes.org/pub/bacteria/release-37/fasta/bacteria_18_collection/staphylococcus_aureus_subsp_aureus_nctc_8325/dna//Staphylococcus_aureus_subsp_aureus_nctc_8325.ASM1342v1.dna_rm.toplevel.fa.gz
+           => ‘data/raw_external/NCTC8325.fa.gz’
+Resolving ftp.ensemblgenomes.org (ftp.ensemblgenomes.org)... 193.62.197.75
+Connecting to ftp.ensemblgenomes.org (ftp.ensemblgenomes.org)|193.62.197.75|:21... connected.
+Logging in as anonymous ... Logged in!
+==> SYST ... done.    ==> PWD ... done.
+==> TYPE I ... done.  ==> CWD (1) /pub/bacteria/release-37/fasta/bacteria_18_collection/staphylococcus_aureus_subsp_aureus_nctc_8325/dna/ ... done.
+==> SIZE Staphylococcus_aureus_subsp_aureus_nctc_8325.ASM1342v1.dna_rm.toplevel.fa.gz ... 866258
+==> PASV ... done.    ==> RETR Staphylococcus_aureus_subsp_aureus_nctc_8325.ASM1342v1.dna_rm.toplevel.fa.gz ... done.
+Length: 866258 (846K) (unauthoritative)
+
+     0K .......... .......... .......... .......... ..........  5%  167K 5s
+    50K .......... .......... .......... .......... .......... 11%  345K 3s
+   100K .......... .......... .......... .......... .......... 17% 2.43M 2s
+   150K .......... .......... .......... .......... .......... 23% 11.3M 2s
+   200K .......... .......... .......... .......... .......... 29%  345K 1s
+   250K .......... .......... .......... .......... .......... 35% 7.12M 1s
+   300K .......... .......... .......... .......... .......... 41% 6.89M 1s
+   350K .......... .......... .......... .......... .......... 47% 8.43M 1s
+   400K .......... .......... .......... .......... .......... 53%  455K 1s
+   450K .......... .......... .......... .......... .......... 59% 1.92M 1s
+   500K .......... .......... .......... .......... .......... 65% 8.57M 0s
+   550K .......... .......... .......... .......... .......... 70% 8.87M 0s
+   600K .......... .......... .......... .......... .......... 76% 2.95M 0s
+   650K .......... .......... .......... .......... .......... 82% 7.47M 0s
+   700K .......... .......... .......... .......... .......... 88% 9.10M 0s
+   750K .......... .......... .......... .......... .......... 94% 6.56M 0s
+   800K .......... .......... .......... .......... .....     100% 2.67M=0.8s
+
+2021-12-02 14:36:10 (1017 KB/s) - ‘data/raw_external/NCTC8325.fa.gz’ saved [866258]
+

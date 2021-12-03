@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count    min threads    max threads
+---------------------  -------  -------------  -------------
+convert_to_upper_case        1              1              1
+total                        1              1              1
+
+Select jobs to execute...
+
+[Thu Dec  2 11:47:26 2021]
+rule convert_to_upper_case:
+    input: a.txt, b.txt
+    output: DNA.conc.txt
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Thu Dec  2 11:47:26 2021]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: /home/dinesh/TUT/workshop-reproducible-research/tutorials/snakemake/.snakemake/log/2021-12-02T114726.575498.snakemake.log

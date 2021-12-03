@@ -1,0 +1,45 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count    min threads    max threads
+---------------------  -------  -------------  -------------
+concatenate_files            1              1              1
+convert_to_upper_case        1              1              1
+total                        2              1              1
+
+Select jobs to execute...
+
+[Thu Dec  2 12:09:46 2021]
+rule convert_to_upper_case:
+    input: a.txt
+    output: a.upper.txt
+    jobid: 1
+    reason: Updated input files: a.txt
+    resources: tmpdir=/tmp
+
+
+        tr [a-z] [A-Z] < a.txt > a.upper.txt
+        
+[Thu Dec  2 12:09:46 2021]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Thu Dec  2 12:09:46 2021]
+rule concatenate_files:
+    input: a.upper.txt, b.upper.txt
+    output: a_b.txt
+    jobid: 0
+    reason: Input files updated by another job: a.upper.txt
+    wildcards: first=a, second=b
+    resources: tmpdir=/tmp
+
+
+        cat a.upper.txt b.upper.txt > a_b.txt
+        
+[Thu Dec  2 12:09:46 2021]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: /home/dinesh/TUT/workshop-reproducible-research/tutorials/snakemake/.snakemake/log/2021-12-02T120946.488689.snakemake.log

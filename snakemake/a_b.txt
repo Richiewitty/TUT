@@ -1,0 +1,3 @@
+Concatenating a.upper.txt b.upper.txt
+THIS IS A.TXT DONE BY RICHARD
+THIS IS B.TXT
