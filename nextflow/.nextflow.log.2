@@ -1,0 +1,120 @@
+Dec-03 19:31:33.401 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf
+Dec-03 19:31:33.837 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 21.04.0
+Dec-03 19:31:33.970 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [furious_ptolemy] - revision: 6276403d5a
+Dec-03 19:31:34.026 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/nextflow.config
+Dec-03 19:31:34.028 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/nextflow.config
+Dec-03 19:31:34.103 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Dec-03 19:31:37.178 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; plugins-dir=/home/dinesh/.nextflow/plugins
+Dec-03 19:31:37.183 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Dec-03 19:31:37.187 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins local root: .nextflow/plr/empty
+Dec-03 19:31:37.204 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Dec-03 19:31:37.206 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Dec-03 19:31:37.227 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Dec-03 19:31:37.291 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Dec-03 19:31:37.517 [main] DEBUG nextflow.Session - Session uuid: 09fe730b-6a50-4c33-a4df-32c2efd3bdbf
+Dec-03 19:31:37.517 [main] DEBUG nextflow.Session - Run name: furious_ptolemy
+Dec-03 19:31:37.519 [main] DEBUG nextflow.Session - Executor pool size: 2
+Dec-03 19:31:37.696 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 21.04.0 build 5552
+  Created: 02-05-2021 16:22 UTC (21:52 IDT)
+  System: Linux 5.11.0-41-generic
+  Runtime: Groovy 3.0.7 on OpenJDK 64-Bit Server VM 11.0.9.1-internal+0-adhoc..src
+  Encoding: UTF-8 (UTF-8)
+  Process: 3292@dinu [127.0.1.1]
+  CPUs: 2 - Mem: 1.9 GB (69.4 MB) - Swap: 2 GB (1.9 GB)
+Dec-03 19:31:37.862 [main] DEBUG nextflow.Session - Work-dir: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/work [ext2/ext3]
+Dec-03 19:31:37.863 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/bin
+Dec-03 19:31:37.933 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Dec-03 19:31:37.986 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Dec-03 19:31:39.154 [main] DEBUG nextflow.Session - Session start invoked
+Dec-03 19:31:41.221 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Dec-03 19:31:41.353 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: GENERATE_COUNTS_TABLE, GET_GENOME_FASTA, RUN_MULTIQC, ALIGN_TO_GENOME, RUN_FASTQC, SORT_BAM, GET_SRA_BY_ACCESSION, GET_GENOME_GFF3, INDEX_GENOME
+Dec-03 19:31:41.765 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-03 19:31:41.765 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-03 19:31:41.776 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Dec-03 19:31:41.819 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=2; memory=1.9 GB; capacity=2; pollInterval=100ms; dumpInterval=5m
+Dec-03 19:31:42.141 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-03 19:31:42.141 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-03 19:31:42.205 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-03 19:31:42.205 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-03 19:31:42.222 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-03 19:31:42.223 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-03 19:31:42.234 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-03 19:31:42.234 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-03 19:31:42.259 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-03 19:31:42.261 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-03 19:31:42.300 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-03 19:31:42.301 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-03 19:31:42.317 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-03 19:31:42.317 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-03 19:31:42.361 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-03 19:31:42.361 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-03 19:31:42.370 [main] DEBUG nextflow.Session - Ignite dataflow network (10)
+Dec-03 19:31:42.370 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > GET_SRA_BY_ACCESSION
+Dec-03 19:31:42.394 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > RUN_FASTQC
+Dec-03 19:31:42.401 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > RUN_MULTIQC
+Dec-03 19:31:42.411 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > GET_GENOME_FASTA
+Dec-03 19:31:42.412 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > INDEX_GENOME
+Dec-03 19:31:42.413 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ALIGN_TO_GENOME
+Dec-03 19:31:42.414 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SORT_BAM
+Dec-03 19:31:42.416 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > GET_GENOME_GFF3
+Dec-03 19:31:42.421 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > GENERATE_COUNTS_TABLE
+Dec-03 19:31:42.422 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Dec-03 19:31:42.423 [main] DEBUG nextflow.Session - Session await
+Dec-03 19:31:43.069 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-03 19:31:43.127 [Task submitter] INFO  nextflow.Session - [7b/5b1148] Submitted process > GET_SRA_BY_ACCESSION (SRR935090)
+Dec-03 19:31:43.163 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-03 19:31:43.164 [Task submitter] INFO  nextflow.Session - [46/607e98] Submitted process > GET_GENOME_GFF3
+Dec-03 19:31:47.819 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: GET_GENOME_GFF3; status: COMPLETED; exit: 0; error: -; workDir: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/work/46/607e9835e4e9c476af8f2c00f101d6]
+Dec-03 19:31:47.823 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-03 19:31:47.828 [Task submitter] INFO  nextflow.Session - [ff/5d48ca] Submitted process > GET_GENOME_FASTA
+Dec-03 19:31:47.982 [Task monitor] DEBUG n.util.BlockingThreadExecutorFactory - Thread pool name=FileTransfer; maxThreads=6; maxQueueSize=18; keepAlive=1m
+Dec-03 19:31:50.850 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: GET_GENOME_FASTA; status: COMPLETED; exit: 0; error: -; workDir: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/work/ff/5d48ca017ceafcfd6da77c56cf40a2]
+Dec-03 19:31:50.861 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-03 19:31:50.862 [Task submitter] INFO  nextflow.Session - [9e/9afd02] Submitted process > GET_SRA_BY_ACCESSION (SRR935091)
+Dec-03 19:31:59.526 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: GET_SRA_BY_ACCESSION (SRR935090); status: COMPLETED; exit: 0; error: -; workDir: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/work/7b/5b1148e8ab0536c9d1966604357710]
+Dec-03 19:31:59.535 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-03 19:31:59.536 [Task submitter] INFO  nextflow.Session - [07/9b295d] Submitted process > GET_SRA_BY_ACCESSION (SRR935092)
+Dec-03 19:32:00.659 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: GET_SRA_BY_ACCESSION (SRR935091); status: COMPLETED; exit: 0; error: -; workDir: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/work/9e/9afd0245de839ec8f34d480a0e75d8]
+Dec-03 19:32:00.665 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-03 19:32:00.668 [Task submitter] INFO  nextflow.Session - [7b/bcd747] Submitted process > INDEX_GENOME
+Dec-03 19:32:06.124 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: INDEX_GENOME; status: COMPLETED; exit: 0; error: -; workDir: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/work/7b/bcd7470c532010a49790717bafdeea]
+Dec-03 19:32:06.134 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-03 19:32:06.134 [Task submitter] INFO  nextflow.Session - [65/eaad47] Submitted process > RUN_FASTQC (SRR935090)
+Dec-03 19:32:09.718 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: GET_SRA_BY_ACCESSION (SRR935092); status: COMPLETED; exit: 0; error: -; workDir: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/work/07/9b295d8511ed757ec3b36903a81a2d]
+Dec-03 19:32:09.733 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-03 19:32:09.734 [Task submitter] INFO  nextflow.Session - [dc/8f5f37] Submitted process > RUN_FASTQC (SRR935091)
+Dec-03 19:32:25.419 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: RUN_FASTQC (SRR935091); status: COMPLETED; exit: 0; error: -; workDir: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/work/dc/8f5f3759bdc369f454f43022a11339]
+Dec-03 19:32:25.449 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-03 19:32:25.449 [Task submitter] INFO  nextflow.Session - [33/2dbc1b] Submitted process > ALIGN_TO_GENOME (SRR935090)
+Dec-03 19:32:25.520 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: RUN_FASTQC (SRR935090); status: COMPLETED; exit: 0; error: -; workDir: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/work/65/eaad4702514fe2271717e06292e1a5]
+Dec-03 19:32:25.526 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-03 19:32:25.526 [Task submitter] INFO  nextflow.Session - [2e/15e73c] Submitted process > ALIGN_TO_GENOME (SRR935091)
+Dec-03 19:32:28.467 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: ALIGN_TO_GENOME (SRR935091); status: COMPLETED; exit: 0; error: -; workDir: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/work/2e/15e73c1a9579f063f2c37e01ccfdfb]
+Dec-03 19:32:28.472 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-03 19:32:28.485 [Task submitter] INFO  nextflow.Session - [e2/db71fc] Submitted process > ALIGN_TO_GENOME (SRR935092)
+Dec-03 19:32:28.701 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: ALIGN_TO_GENOME (SRR935090); status: COMPLETED; exit: 0; error: -; workDir: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/work/33/2dbc1b9022639eb14684c54d7f4d52]
+Dec-03 19:32:28.704 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-03 19:32:28.705 [Task submitter] INFO  nextflow.Session - [23/cde559] Submitted process > RUN_FASTQC (SRR935092)
+Dec-03 19:32:30.514 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: ALIGN_TO_GENOME (SRR935092); status: COMPLETED; exit: 0; error: -; workDir: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/work/e2/db71fcfa676bef713826b41e08ce2f]
+Dec-03 19:32:30.519 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-03 19:32:30.519 [Task submitter] INFO  nextflow.Session - [53/bdc9df] Submitted process > SORT_BAM (SRR935091)
+Dec-03 19:32:31.053 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: SORT_BAM (SRR935091); status: COMPLETED; exit: 0; error: -; workDir: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/work/53/bdc9df00ff8bdabfd154f30b24d1a0]
+Dec-03 19:32:31.063 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-03 19:32:31.067 [Task submitter] INFO  nextflow.Session - [0a/03b37d] Submitted process > SORT_BAM (SRR935090)
+Dec-03 19:32:31.564 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: SORT_BAM (SRR935090); status: COMPLETED; exit: 0; error: -; workDir: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/work/0a/03b37de55d6454fad354dcb42a66c9]
+Dec-03 19:32:31.567 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-03 19:32:31.567 [Task submitter] INFO  nextflow.Session - [70/31357a] Submitted process > SORT_BAM (SRR935092)
+Dec-03 19:32:31.911 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: SORT_BAM (SRR935092); status: COMPLETED; exit: 0; error: -; workDir: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/work/70/31357abd18701be83156f5648d654e]
+Dec-03 19:32:31.945 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-03 19:32:31.947 [Task submitter] INFO  nextflow.Session - [33/dce9b1] Submitted process > GENERATE_COUNTS_TABLE
+Dec-03 19:32:32.368 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 16; name: GENERATE_COUNTS_TABLE; status: COMPLETED; exit: 0; error: -; workDir: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/work/33/dce9b1e40c3285232546b517b9395a]
+Dec-03 19:32:35.157 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: RUN_FASTQC (SRR935092); status: COMPLETED; exit: 0; error: -; workDir: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/work/23/cde559ce06d547962a2bf5e2a0141d]
+Dec-03 19:32:35.182 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-03 19:32:35.183 [Task submitter] INFO  nextflow.Session - [44/4527e0] Submitted process > RUN_MULTIQC
+Dec-03 19:33:02.511 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 17; name: RUN_MULTIQC; status: COMPLETED; exit: 0; error: -; workDir: /home/dinesh/TUT/workshop-reproducible-research/tutorials/nextflow/work/44/4527e0995d9869b7471cd25ec542eb]
+Dec-03 19:33:02.522 [main] DEBUG nextflow.Session - Session await > all process finished
+Dec-03 19:33:02.614 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Dec-03 19:33:02.685 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=17; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=2m 7s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=2; peakCpus=2; peakMemory=0; ]
+Dec-03 19:33:02.938 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Dec-03 19:33:03.066 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
